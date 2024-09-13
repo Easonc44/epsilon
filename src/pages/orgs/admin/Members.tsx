@@ -6,6 +6,7 @@ import AdminMember from "../../../comps/pages/orgs/admin/AdminMember";
 import { Box, Typography } from "@mui/material";
 
 import { sortByRole } from "../../../utils/DataFormatters";
+import Button from "@mui/material/Button";
 
 const Members = () => {
     const user = useContext(UserContext);
@@ -33,8 +34,11 @@ const Members = () => {
     return (
         <Box sx={{ width: "100%" }}>
             <Typography variant="h1" align="center" width="100%">
-                Manage Members
+                Message Members
             </Typography>
+            <Button variant="contained" color="secondary">
+                Button
+            </Button>
             {members
                 ?.sort(sortByRole)
                 .map((member, i) => (
