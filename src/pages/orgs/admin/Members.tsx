@@ -50,7 +50,7 @@ const Members = () => {
                 disabled
                 label={emailString}
                 variant="outlined"
-                color="secondary"
+                color="success"
             />
             <Button variant="contained" color="primary" onClick={handleClick}>
                 Button
