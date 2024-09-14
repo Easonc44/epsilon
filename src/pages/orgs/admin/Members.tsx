@@ -7,6 +7,7 @@ import { Box, Typography } from "@mui/material";
 
 import { sortByRole } from "../../../utils/DataFormatters";
 import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 const Members = () => {
     const user = useContext(UserContext);
@@ -30,13 +31,27 @@ const Members = () => {
     const userMember = organization.memberships.find(
         (member) => member.users?.id === user.id,
     );
+    const emailString = members.map((member) => member.email).join(",");
+    console.log(emailString);
+
+    const handleClick = () => {
+        const stringToCopy = emailString;
+        navigator.clipboard.writeText(stringToCopy);
+    };
 
     return (
         <Box sx={{ width: "100%" }}>
             <Typography variant="h1" align="center" width="100%">
                 Message Members
             </Typography>
-            <Button variant="contained" color="secondary">
+            <TextField
+                id="outlined-basic"
+                fullWidth
+                disabled
+                label={emailString}
+                variant="outlined"
+            />
+            <Button variant="contained" color="secondary" onClick={handleClick}>
                 Button
             </Button>
             {members
