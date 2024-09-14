@@ -51,7 +51,7 @@ const Members = () => {
                 label={emailString}
                 variant="outlined"
             />
-            <Button variant="contained" color="secondary" onClick={handleClick}>
+            <Button variant="contained" color="primary" onClick={handleClick}>
                 Button
             </Button>
             {members
