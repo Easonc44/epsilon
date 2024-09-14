@@ -52,7 +52,7 @@ const Members = () => {
                 variant="outlined"
             />
             <Button variant="contained" color="primary" onClick={handleClick}>
-                click to copy
+                Click here to copy
             </Button>
             {members
                 ?.sort(sortByRole)
